@@ -1,0 +1,144 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap'); */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Prosto One', cursive;
+}
+
+body {
+  background: #e8eaec;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+    overflow-y: hidden;
+}
+
+h1 {
+  margin-bottom: 8%;
+  text-align: center;
+  font-family: "Fredoka One", cursive;
+  color: #59a4d3;
+  background-color: #dae8fa;
+  border-radius: 12px;
+  /* letter-spacing: 0.1em; */
+  box-shadow: 
+  inset 0 0 1px #e7ebef,
+  inset -1px -1px 3px rgba(255, 255, 255, 0.8),
+  inset 1px 1px 0 rgba(0,0,0,.2),
+  inset -3px -3px 15px 1px rgba(246, 244, 244, 0.8),
+  inset 3px 3px 15px 1px rgba(248, 243, 243, 0.96);
+}
+
+p {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid rgb(252, 239, 239);
+  line-height: 0.1em;
+}
+
+p span {
+  background-color: rgb(240, 242, 242);
+  padding:0 10px;
+  box-shadow: 
+    inset 1px 1px 0px rgb(200, 196, 194);
+}
+
+input {
+  /* margin-bottom: 1%; */
+  margin-bottom: 0em;
+  border: none;
+  border-radius: 12px;
+  background-color: #dae8fa;
+  box-shadow: 
+  inset 0 0 1px #e7ebef,
+  inset -1px -1px 3px rgba(255, 255, 255, 0.8),
+  inset 1px 1px 0 rgba(0,0,0,.2),
+  inset -3px -3px 15px 1px rgba(246, 244, 244, 0.8),
+  inset 3px 3px 15px 1px rgba(248, 243, 243, 0.96);
+}
+
+
+input, button {
+  padding: 3%;
+  width: 100%;
+}
+
+.login-container {
+  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* padding: 4em 0em; */
+  width: 400px;
+  min-height: 300px;
+  border-radius: 30px;
+  padding: 50px;
+  /* margin-top: 13em; */
+  /* border-radius: 12px; */
+  background: #d5dce7;
+  text-align: center;
+  box-shadow: 0 35px 68px 0 rgba(136,174,222,0.42),
+  inset 0 -8px 16px 0 #B9D1F1;
+}
+
+#submit, #create-acct-btn {
+  background:#dae8fa;
+    border-radius: 5px;
+    box-shadow: 1.5px 1.5px 0px rgba(0,0,0,.2);
+    transition: all 0.3s ease-in-out;
+    border: none;
+    font-family: 'Prosto One', cursive;
+    font-size: 18px;
+    margin-top: 5%;
+}
+#create-acct-btn:hover,#submit:hover{
+  cursor:pointer;
+  box-shadow: 
+  inset 1px 1px 0px rgb(200, 196, 194);
+}
+
+button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+#sign-up {
+  border: none;
+  width: 50%;
+  background: #f4f5f7;
+  /* text-align: center; */
+  box-shadow: 0 35px 68px 0 rgba(136,174,222,0.42),
+  inset 0 -8px 16px 0 #B9D1F1;
+}
+
+#create-acct {
+  display: none;
+}
+
+#return-btn {
+  background: none;
+  color: rgb(136, 174, 228);
+  text-decoration:underline;
+  border: none;
+  font-size: 15px;
+  margin-top: 3%;
+}
+#emoji{
+  font-size: 25px;
+  position: relative;
+  bottom: 1em;
+  filter: invert(100%);
+}
+span i{
+  position: relative;
+  top:1.8em;
+  left: 8em;
+  filter: invert(100%);
+}

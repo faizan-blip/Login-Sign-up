@@ -9,7 +9,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     background: #e8eaec;
 }
 body:hover{
@@ -28,7 +28,7 @@ perspective: 600px;
     align-items: center;
     justify-content: center;
     /* padding: 4em 0em; */
-    width: 300px;
+   max-width: 300px;
     min-height: 300px;
     border-radius: 30px;
     padding: 50px;
@@ -114,7 +114,7 @@ label{
     font-family: 'Prosto One', cursive;
     color: #0c4182;
 }
-.regis button,.login button{
+.regis input,.login input{
     font-family: 'Prosto One', cursive;
     font-size: 18px;
     border: none;
@@ -168,3 +168,11 @@ form{
 }
 /* #user1{
     /* backface-visibility: hidden; */
+
+#gap2 input{
+margin-bottom: 16px;
+}
+#texting label{
+    position: relative;
+    bottom: 0.5em;
+}
