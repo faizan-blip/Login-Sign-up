@@ -4,9 +4,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
-    <h1>Welcome to Dashboard</h1>
+
+    <!-- <h1>Welcome to Dashboard</h1> -->
+    <div class="clock">
+        <div class="hour hand" id="hour"></div>
+        <div class="minute hand" id="minute"></div>
+        <div class="seconds hand" id="seconds"></div>
+    </div>
+    <div class="container">
+        <div id="upper">
+      <div><a href="index.html"> <i class="fa-solid fa-house"></i></a></div> 
+       <div><h1>Welcome To The Developer Mode</h1></div> 
+    </div>
+        <div class="search">
+            <input type="search" id="search" name="search" placeholder="Search...">
+    </div>
+
+
+<script>
+var hour = document.getElementById("hour");
+var minute = document.getElementById("minute");
+var seconds = document.getElementById("seconds");
+
+const tick = () =>{
+
+const now = new Date();
+
+        var hr = now.getHours();
+        var min = now.getMinutes();
+        var sec = now.getSeconds();
+
+        var calc_hr = (hr * 30) + (min / 2);
+        var calc_min =    (min * 6)  ;
+        var calc_sec = sec * 6 ;
+
+        hour.style.transform = "rotate(" + calc_hr + "deg)";
+        minute.style.transform = "rotate(" + calc_min + "deg)";
+        seconds.style.transform = "rotate(" + calc_sec + "deg)";
+
+}
+setInterval(tick,1000);
+</script>
+
 </body>
 </html>

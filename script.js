@@ -29,6 +29,7 @@ const confirmSignUpPasswordIn = document.getElementById("confirm-password-signup
 const createacctbtn = document.getElementById("create-acct-btn");
 
 const returnBtn = document.getElementById("return-btn");
+// var expression = /^[^@]+@\w+(\.\w+)+\w$/.test();
 
 var email, password, signupEmail, signupPassword, confirmSignupEmail, confirmSignUpPassword;
 
@@ -49,8 +50,8 @@ createacctbtn.addEventListener("click", function() {
       isVerified = false;
   }
   
-  if(signupEmail == null || confirmSignupEmail == null || signupPassword == null || confirmSignUpPassword == null) {
-    window.alert("Please fill out all required fields.");
+  if(signupEmail == null || confirmSignupEmail == null || signupPassword == null || confirmSignUpPassword == null ) {
+    window.alert("Please fill out all required fields Correctly.");
     isVerified = false;
   }
   
