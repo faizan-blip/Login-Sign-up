@@ -30,21 +30,15 @@
             <input type="text" name="" id="query" value="" placeholder="Search Google">`
             <i onclick="search()" id="search" class="fa-brands fa-searchengin"></i>
         </div>
-            <form id="todo" style="display: none;">
-                <input type="text" name="" id="todo1" placeholder="Save your Details Here">
-                <input type="submit" value="submit">
-                <table>
-                    <thead>
-                        <tr>
-                            <td>Todo</td>
-                            <td>Delete</td>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-            </form>
-           
-            </table>
-
+    </div>
+       <div>
+        <a href="https://github.com/faizan-blip">
+            <i id="git" class="fa-brands fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/faizan-akram-3a5a12247/">
+            <i id="link"class="fa-brands fa-linkedin"></i>
+        </a>
+       </div>
    
 <script>
 var hour = document.getElementById("hour");
@@ -70,32 +64,7 @@ const now = new Date();
 }
 setInterval(tick,1000);
 </script>
-<script>
-    let form = document.querySelector("form");
-    let local = localStorage.getItem('todo');
-    let todo = local ? JSON.parse(local):[];
-form.addEventListener('submit' , (e) =>{
- e.preventDefault();
- let input = form[0].value;
- todo.push(input);
- localStorage.setItem('todo' , JSON.stringify(todo))
-})
-todo.map((data,index) =>{
-document.querySelector("tbody").innerHTML += `
-<tr>
-    <td>${data}</td>
-    <td onclick = "del(${index})">Delete</td>
-    </tr>
-`;
-})
-function del(e){
-let Delete = todo.filter((data,index) =>{
-    return index!==e;
-});
- localStorage.setItem('todo', JSON.stringify(Delete))
- location.reload()
-}
-</script>
+
   <script src="dashboard.js"></script>
   <!-- <script src="script.js"></script> -->
 </body>

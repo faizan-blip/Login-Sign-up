@@ -27,6 +27,8 @@
     padding-top: 0.5em;
    color:  rgb(144, 206, 250);
    font-family: 'Rubik Bubbles', cursive;
+   position: relative;
+   left: 1em;
   }
   /* clock */
   .hour{
@@ -120,7 +122,7 @@ input {
 #search{
   position: relative;
   top: 1.7em;
-  right: 2em;
+  right: -0.4em;
   color: #aec5e3;
 }
 /*  */
@@ -191,4 +193,18 @@ table{
 #todo1{
   position: relative;
   left: 23em;
+}
+#git{
+  transform: scale(2);
+  margin-top: 28em;
+  margin-right: 2em;
+}
+#link{
+  transform: scale(2);
+  margin-top: 28em;
+  /* margin-left: 2em; */
+}
+#query{
+  position: relative;
+  left: 2.5em;
 }
