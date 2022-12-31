@@ -82,8 +82,9 @@ submitButton.addEventListener("click", function() {
     .then((userCredential) => {
       // Signed in
       const user = userCredential.user;
+      // console.log(user);
       console.log("Success! Welcome back!😁");
-      window.alert("Success! Welcome back!😁");
+      window.alert("Success! Welcome back!😁 "+ emailInput.value);
       window.location.href = "dashboard.html";
       // ...
     })
@@ -104,3 +105,4 @@ returnBtn.addEventListener("click", function() {
     main.style.display = "block";
     createacct.style.display = "none";
 });
+

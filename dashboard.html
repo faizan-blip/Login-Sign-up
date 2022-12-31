@@ -5,27 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap" rel="stylesheet">
+   
     <title>Dashboard</title>
     <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
-
     <!-- <h1>Welcome to Dashboard</h1> -->
     <div class="clock">
         <div class="hour hand" id="hour"></div>
         <div class="minute hand" id="minute"></div>
         <div class="seconds hand" id="seconds"></div>
     </div>
+
     <div class="container">
         <div id="upper">
-      <div><a href="index.html"> <i class="fa-solid fa-house"></i></a></div> 
+      <div><a href="index.html"> <i class="fa-solid fa-house" onclick="logout()"></i></a></div> 
        <div><h1>Welcome To The Developer Mode</h1></div> 
+       <div class="check-box">
+        <input id="black" type="checkbox" onclick="black()">
+    </div>
     </div>
         <div class="search">
-            <input type="search" id="search" name="search" placeholder="Search...">
-    </div>
+            <input type="text" name="" id="query" value="" placeholder="Search Google">`
+            <i onclick="search()" id="search" class="fa-brands fa-searchengin"></i>
+        </div>
+            <form id="todo" style="display: none;">
+                <input type="text" name="" id="todo1" placeholder="Save your Details Here">
+                <input type="submit" value="submit">
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Todo</td>
+                            <td>Delete</td>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+            </form>
+           
+            </table>
 
-
+   
 <script>
 var hour = document.getElementById("hour");
 var minute = document.getElementById("minute");
@@ -50,6 +70,33 @@ const now = new Date();
 }
 setInterval(tick,1000);
 </script>
-
+<script>
+    let form = document.querySelector("form");
+    let local = localStorage.getItem('todo');
+    let todo = local ? JSON.parse(local):[];
+form.addEventListener('submit' , (e) =>{
+ e.preventDefault();
+ let input = form[0].value;
+ todo.push(input);
+ localStorage.setItem('todo' , JSON.stringify(todo))
+})
+todo.map((data,index) =>{
+document.querySelector("tbody").innerHTML += `
+<tr>
+    <td>${data}</td>
+    <td onclick = "del(${index})">Delete</td>
+    </tr>
+`;
+})
+function del(e){
+let Delete = todo.filter((data,index) =>{
+    return index!==e;
+});
+ localStorage.setItem('todo', JSON.stringify(Delete))
+ location.reload()
+}
+</script>
+  <script src="dashboard.js"></script>
+  <!-- <script src="script.js"></script> -->
 </body>
 </html>

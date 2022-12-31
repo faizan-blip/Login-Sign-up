@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="todo.css">
+</head>
+<body>
+    <h1>todo app</h1>
+    <form >
+        <input type="text" name="" id="">
+        <input type="submit" value="submit">
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <td>Todo</td>
+                <td>Delete</td>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script>
+        let form = document.querySelector("form");
+        let local = localStorage.getItem('todo');
+        let todo = local ? JSON.parse(local):[];
+   form.addEventListener('submit' , (e) =>{
+     e.preventDefault();
+     let input = form[0].value;
+     todo.push(input);
+     localStorage.setItem('todo' , JSON.stringify(todo))
+   })
+   todo.map((data,index) =>{
+    document.querySelector("tbody").innerHTML += `
+    <tr>
+        <td>${data}</td>
+        <td onclick = "del(${index})">Delete</td>
+        </tr>
+    `;
+   })
+   function del(e){
+    let Delete = todo.filter((data,index) =>{
+        return index!==e;
+    });
+     localStorage.setItem('todo', JSON.stringify(Delete))
+     location.reload()
+   }
+    </script>
+</body>
+</html>
